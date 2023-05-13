@@ -30,10 +30,9 @@ class SourceAdapter (var lisSource : List<Source>):RecyclerView.Adapter<SourceAd
        return lisSource.size
     }
 
-    fun setListSource(list: List<Source>){
+    fun setListSources(list: List<Source>){
         this.lisSource = list
         notifyDataSetChanged()
 
-        Log.d("HASIL_SOURCE", list.toString())
     }
 }

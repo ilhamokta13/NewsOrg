@@ -8,7 +8,9 @@ import com.example.newsorg.R
 import com.example.newsorg.adapter.CategoryAdapter
 import com.example.newsorg.databinding.ActivityCategoryBinding
 import com.example.newsorg.model.CategoryData
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class CategoryActivity : AppCompatActivity() {
     lateinit var binding: ActivityCategoryBinding
     lateinit var category : CategoryAdapter

@@ -9,7 +9,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.newsorg.adapter.SourceAdapter
 import com.example.newsorg.databinding.ActivitySourceBinding
 import com.example.newsorg.viewmodel.SourceViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SourceActivity : AppCompatActivity() {
     lateinit var binding : ActivitySourceBinding
     lateinit var sourceAdapter: SourceAdapter
@@ -33,7 +35,7 @@ class SourceActivity : AppCompatActivity() {
 
         sourceVm.getDataSource().observe(this, Observer {
             if(it != null){
-                sourceAdapter.setListSource(it)
+                sourceAdapter.setListSources(it)
             }
         })
 

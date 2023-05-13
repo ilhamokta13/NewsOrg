@@ -12,7 +12,9 @@ import com.example.newsorg.adapter.SourceAdapter
 import com.example.newsorg.databinding.ActivityArticleBinding
 import com.example.newsorg.viewmodel.ArticleViewModel
 import com.example.newsorg.viewmodel.SourceViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ArticleActivity : AppCompatActivity() {
     lateinit var binding: ActivityArticleBinding
     lateinit var artadapter: ArticleAdapter

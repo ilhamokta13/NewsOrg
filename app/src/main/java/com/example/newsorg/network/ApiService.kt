@@ -4,9 +4,12 @@ import com.example.newsorg.model.articel.Article
 import com.example.newsorg.model.articel.ResponseArticles
 import com.example.newsorg.model.source.ResponseDataSource
 import com.example.newsorg.model.source.Source
+import dagger.Module
+import dagger.hilt.InstallIn
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
+
 
 interface ApiService {
 

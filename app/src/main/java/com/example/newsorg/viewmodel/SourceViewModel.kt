@@ -8,11 +8,16 @@ import androidx.lifecycle.ViewModel
 import com.example.newsorg.model.source.ResponseDataSource
 import com.example.newsorg.model.source.Source
 import com.example.newsorg.network.ApiClient
+import com.example.newsorg.network.ApiService
+import dagger.hilt.android.HiltAndroidApp
+import dagger.hilt.android.lifecycle.HiltViewModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import javax.inject.Inject
 
-class SourceViewModel : ViewModel() {
+@HiltViewModel
+class SourceViewModel @Inject constructor (var api : ApiService): ViewModel() {
 
     lateinit var liveDataSource : MutableLiveData<List<Source>?>
 
@@ -25,7 +30,7 @@ class SourceViewModel : ViewModel() {
     }
 
     fun callApiSource(category: String){
-        ApiClient.instance.getAllSources(category).enqueue(object : Callback<ResponseDataSource>{
+        api.getAllSources(category).enqueue(object : Callback<ResponseDataSource>{
             override fun onResponse(
                 call: Call<ResponseDataSource>,
                 response: Response<ResponseDataSource>
